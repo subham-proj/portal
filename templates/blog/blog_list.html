@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+
+        
+<div class="container py-5">
+    <div class="row">
+    <!-- Article Card begins-->
+        <div class="col-md-8">
+            <div class="card card-x">
+                <div class="card-header">
+                    <p class="ellipseReadMore2">asndasdansdjansdjnasj</p>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    <p class="ellipseReadMore"> asbdhassssssssssssssssssssssssssssssssssssssssssssssssssssssssssd</p>
+                    <p><a href="#" style="color:orange">Read More -</a></p>
+                
+                    <footer class="blockquote-footer"><strong>Admin </strong>asbdhadjabsjdbahjsdbja &nbsp;
+                    <!-- <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>&nbsp;
+                    <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>&nbsp;
+                    <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>&nbsp;
+                    <i class="fa fa-twitter fa-lg" aria-hidden="true"></i> -->
+                    </footer>
+                    
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    <!-- Article Card ends-->
+ 
+    
+    <!--Side Form begins-->    
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="card side-form">
+                <div class="card-body" style="background-color: #F7F7F7;">
+                    <h5 class="card-title" style="text-align: center; color: grey">Have a query?</h5><br>
+                    
+                    <form action="query_send" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" name="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="query">Write your query</label>
+                            <textarea class="form-control" name="query" id="query" rows="4" ></textarea>
+                        </div>
+
+                        <span style="float: right;"><button type="submit" class="btn btn-success">Submit</button></span>
+                    </form>
+                    
+                </div>
+            </div>
+            <br><br>
+            
+        </div>
+    <!--Side Form ends-->
+
+    
+    </div>
+</div>
+
+
+    
+
+{%endblock%}
