@@ -45,7 +45,6 @@ class Blogs(admin.ModelAdmin):
         (_('Answer'), {'fields': ('answer', 'code',)}),
         (_('Social'), {'fields': ('name', 'college_name','facebook','twitter','linkedin','instagram')}),
         (_('tags'), {'fields': ('tags',)}),
-        # (_('Info'), {'fields': ('published_on')}),
         
     )
 

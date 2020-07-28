@@ -7,18 +7,25 @@
         
 <div class="container py-5">
     <div class="row">
+    {% if not object_list %}
+        <div class="text-center">
+            <b><p>No Results found for current selection</p></b>
+        </div>
+    {% endif %}
+
+    {% for e in object_list%}
     <!-- Article Card begins-->
         <div class="col-md-8">
             <div class="card card-x">
                 <div class="card-header">
-                    <p class="ellipseReadMore2">asndasdansdjansdjnasj</p>
+                    <p class="ellipseReadMore2">{{e.question}} </p>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
-                    <p class="ellipseReadMore"> asbdhassssssssssssssssssssssssssssssssssssssssssssssssssssssssssd</p>
-                    <p><a href="#" style="color:orange">Read More -</a></p>
+                    <p class="ellipseReadMore">{{e.answer}} </p>
+                    <p><a href="{{e.slug}} " style="color:orange">Read More -</a></p>
                 
-                    <footer class="blockquote-footer"><strong>Admin </strong>asbdhadjabsjdbahjsdbja &nbsp;
+                    <footer class="blockquote-footer"><strong>{%if e.name%}{{e.name}}{%else%} Admin{%endif%} </strong>{%if e.name%}({{e.college_name}}){%endif%} &nbsp;
                     <!-- <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>&nbsp;
                     <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>&nbsp;
                     <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>&nbsp;
@@ -31,7 +38,8 @@
         </div>
     <!-- Article Card ends-->
  
-    
+    {% if forloop.first %}
+
     <!--Side Form begins-->    
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="card side-form">
@@ -58,7 +66,9 @@
             
         </div>
     <!--Side Form ends-->
+{% endif %}
 
+        {% endfor %}
     
     </div>
 </div>
