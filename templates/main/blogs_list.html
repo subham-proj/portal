@@ -18,7 +18,7 @@
         <div class="col-md-8">
             <div class="card card-x">
                 <div class="card-header">
-                    <p class="ellipseReadMore2">{{e.question}} </p>
+                    <p class="ellipseReadMore2"><a class="card-link" href="{{e.slug}}" style="color:black">{{e.question }}</a> </p>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
@@ -26,10 +26,10 @@
                     <p><a href="{{e.slug}} " style="color:orange">Read More -</a></p>
                 
                     <footer class="blockquote-footer"><strong>{%if e.name%}{{e.name}}{%else%} Admin{%endif%} </strong>{%if e.name%}({{e.college_name}}){%endif%} &nbsp;
-                    <!-- <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>&nbsp;
-                    <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>&nbsp;
-                    <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>&nbsp;
-                    <i class="fa fa-twitter fa-lg" aria-hidden="true"></i> -->
+                    {%if e.facebook %}<a href="{{e.facebook}}" style="color:black;"> <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>{%endif%} &nbsp;
+                    {%if e.linkedin %}<a href="{{e.linkedin}}" style="color:black;"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a>{%endif%} &nbsp;
+                    {%if e.instagram %}<a href="{{e.instagram}}" style="color:black;"> <i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>{%endif%}&nbsp;
+                    {%if e.twitter %}<a href="{{e.twitter}}" style="color:black;"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i> </a>{%endif%}
                     </footer>
                     
                     </blockquote>
@@ -37,10 +37,11 @@
             </div>
         </div>
     <!-- Article Card ends-->
- 
+    
     {% if forloop.first %}
 
     <!--Side Form begins-->    
+    
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="card side-form">
                 <div class="card-body" style="background-color: #F7F7F7;">
@@ -65,6 +66,7 @@
             <br><br>
             
         </div>
+       
     <!--Side Form ends-->
 {% endif %}
 
