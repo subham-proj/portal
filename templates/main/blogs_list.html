@@ -15,7 +15,7 @@
 
     {% for e in object_list%}
     <!-- Article Card begins-->
-        <div class="col-md-8">
+        <div class="col-12 col-md-8" style="padding-bottom:50px">
             <div class="card card-x">
                 <div class="card-header">
                     <p class="ellipseReadMore2"><a class="card-link" href="{{e.slug}}" style="color:black">{{e.question }}</a> </p>
@@ -36,13 +36,13 @@
                 </div>
             </div>
         </div>
+        
     <!-- Article Card ends-->
     
     {% if forloop.first %}
 
     <!--Side Form begins-->    
-    
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="col-6 col-md-4 " id="content-mobile">
             <div class="card side-form">
                 <div class="card-body" style="background-color: #F7F7F7;">
                     <h5 class="card-title" style="text-align: center; color: grey">Have a query?</h5><br>
@@ -63,10 +63,17 @@
                     
                 </div>
             </div>
-            <br><br>
-            
+        <style>
+            @media screen and (min-width: 768px) and (max-width: 1920px) {
+            #content-mobile { display: block; }  /* show it on small screens */
+            }
+
+            @media screen and (min-width: 0px) and (max-width: 768px) {
+            #content-mobile { display: none; }   /* hide it elsewhere */
+            }
+
+        </style>
         </div>
-       
     <!--Side Form ends-->
 {% endif %}
 
