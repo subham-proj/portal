@@ -1,6 +1,10 @@
+{% load static %}
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand">My<br> Computer Science Portal </a>
+
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/svglogo.svg' %} " width="250px" alt="" loading="lazy">
+        </a>
         <form class="search">
             <div class="search__wrapper">
             <input type="text"  placeholder="Search.." class="search__field">
