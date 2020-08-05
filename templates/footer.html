@@ -1,17 +1,18 @@
+{% load static %}
 <footer class="footer-distributed">
 	<div class="footer-container">	
 		<div class="footer-left">
-            <a href="/"><img src="https://www.pandemicresponsedata.org/wp-content/uploads/2020/05/MERCK-VIB_M_STRING_4_VyVmRp_RGB-1.png" alt="logo"></a>
+            <a href="{% url 'blog-list' %}"><img src="{% static 'images/logo.png' %} " alt="logo"></a>
 				<p class="footer-links">
-					<a href="https://www.pandemicresponsedata.org/">Home</a>
+					<a href="{% url 'blog-list' %} ">Home</a>
 					|
-					<a href="https://www.pandemicresponsedata.org/index.php/contact-us/">Contact Us</a>
+					<a href=" {% url 'contact' %} ">Contact Us</a>
 					|
-					<a href="https://www.pandemicresponsedata.org/index.php/privacy-policy/">Privacy Policy</a>
+					<a href="{% url 'privacy' %}">Privacy Policy</a>
 					|
-					<a href="https://www.pandemicresponsedata.org/index.php/terms-of-use/">Terms of Use</a>
+					<a href="#">Terms of Use</a>
           			|
-         			<a href="https://www.pandemicresponsedata.org/index.php/legal-disclaimer/" class="legal-disclaimer-non-na">Legal Disclaimer</a>
+         			<a href="#" class="legal-disclaimer-non-na">Legal Disclaimer</a>
 				</p>
 
 				<p class="footer-company-name">Copyright © <script>document.write(new Date().getFullYear())</script> All Rights Reserved by CodeLibrary.</p>
@@ -20,7 +21,7 @@
 			<div class="footer-center">
 				<div>
 						<i class="fa fa-map-marker"></i>
-						<p><strong><span>2/1 GRK Lane, Liluah</span>
+						<p><strong><span>B-2/1, N.S.Road, Liluah</span>
 						<span>Howrah, West Bengal, India</span></strong></p>
 				</div>
 

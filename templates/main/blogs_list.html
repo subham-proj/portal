@@ -9,7 +9,7 @@
     <div class="row">
     {% if not object_list %}
         <div class="text-center">
-            <b><p>No Results found for current selection</p></b>
+            <b><p>No Results found!</p></b>
         </div>
     {% endif %}
 
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
                     <p class="ellipseReadMore">{{e.answer}} </p>
-                    <p><a href="{{e.slug}} " style="color:orange">Read More -</a></p>
+                    <p><a href="{{e.slug}} " style="color:#FFA500">Read More -</a></p>
                 
                     <footer class="blockquote-footer"><strong>{%if e.name%}{{e.name}}{%else%} Admin{%endif%} </strong>{%if e.name%}({{e.college_name}}){%endif%} &nbsp;
                     {%if e.facebook %}<a href="{{e.facebook}}" style="color:black;"> <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>{%endif%} &nbsp;
@@ -45,7 +45,7 @@
         <div class="col-6 col-md-4" id="content-mobile">
             <div class="card side-form">
                 <div class="card-body" style="background-color: #F7F7F7;">
-                    <h5 class="card-title" style="text-align: center; color: grey">Have a query?</h5><br>
+                    <h5 class="card-title" style="text-align: center; color:#FFA500 ">Have a query?</h5><br>
                     
                     <form action="query_send" method="post">
                         {% csrf_token %}
@@ -58,7 +58,8 @@
                             <textarea class="form-control" name="query" id="query" rows="4" ></textarea>
                         </div>
 
-                        <span style="float: right;"><button type="submit" class="btn btn-success">Submit</button></span>
+                        <span style="float: right;"><button type="submit" class="btn btn-warning">Submit</button></span>
+                        
                     </form>
                     
                 </div>
