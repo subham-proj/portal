@@ -39,12 +39,6 @@ class BlogListView(ListView):
                 self.c1 = check
                 new_context = new_context.filter(category=check)
 
-        # if sub_catgeory:
-        #     check = SubCategory.objects.filter(slug=sub_catgeory).first()
-        #     if check:
-        #         self.c2 = check
-        #         new_context = new_context.filter(sub_category__slug=check)
-
         return new_context
 
     def get_queryset(self):
@@ -75,14 +69,8 @@ class BlogListView(ListView):
             context['tag'] = self.c2.content
             temp_text += self.c2.content + " |"
 
-        # if self.c1:
-        #     context['cat'] = self.c1.content
-        #     temp_text += self.c1.content + " |"
-
-        # if temp_text:
-        #     context = create_title_context(11,context,temp_text)
-        # else:
-        #     context = create_title_context(11,context)
+       
+        context['recent'] = Blogs.objects.all().order_by("-published_on")[:5]
         return context
 
 
