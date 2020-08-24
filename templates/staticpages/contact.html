@@ -5,8 +5,17 @@
 
 {% block content %}
 
+<div style="position: absolute;
+      top: 8em;
+      right: 2em;z-index: 999999999 !important;">
+{% include 'message.html'%}
+
+</div>
+
 <section class="contact-address-area">
     <div class="container">
+
+
         <div class="sec-title-style1 text-center max-width">
             <div class="title">Contact Us</div>
             <div class="text"><div class="decor-left"><span></span></div><p>Quick Contact</p><div class="decor-right"><span></span></div></div>
@@ -86,47 +95,46 @@
                                 <div class="title">Send Your Message</div>
                                 <div class="text"><div class="decor-left"><span></span></div><p>Contact Form</p></div>
                             </div>
-                            <div class="text-box float-right">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                            </div>
+                            
                         </div> 
                     </div>   
                     <div class="inner-box">
-                        <form id="contact-form" name="contact_form" class="default-form" action="inc/sendmail.php" method="post">
+                        <form action="lead" method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-xl-6 col-lg-12">
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="input-box">   
-                                                <input type="text" name="form_name" value="" placeholder="First Name" required="">
+                                                <input type="text" name="fname" id="fname" placeholder="First Name" required>
                                             </div> 
                                              <div class="input-box"> 
-                                                <input type="text" name="form_phone" value="" placeholder="Phone">
+                                                <input type="text" name="phone" id="phone" placeholder="Phone">
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="input-box">   
-                                                <input type="text" name="form_name" value="" placeholder="Last Name" required="">
+                                                <input type="text" name="lname" id="lname" placeholder="Last Name" required>
                                             </div>
                                             <div class="input-box"> 
-                                                <input type="email" name="form_email" value="" placeholder="Email" required="">
+                                                <input type="email" name="email" id="email" placeholder="Email" required>
                                             </div> 
                                         </div>  
                                     </div> 
                                     <div class="row">
                                          <div class="col-xl-12">
                                             <div class="input-box"> 
-                                                <input type="text" name="form_subject" value="" placeholder="Subject">
+                                                <input type="text" name="sub" id="sub" placeholder="Subject">
                                             </div>     
                                         </div> 
                                     </div>   
                                 </div>
                                 <div class="col-xl-6 col-lg-12">
                                     <div class="input-box">    
-                                        <textarea name="form_message" placeholder="Your Message..." required=""></textarea>
+                                        <textarea name="form_message" name="msg" id="msg" placeholder="Your Message..." required></textarea>
                                     </div>
                                     <div class="button-box">
-                                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden">
                                         <button type="submit" data-loading-text="Please wait...">Send Message<span class="flaticon-next"></span></button>    
                                     </div>         
                                 </div> 

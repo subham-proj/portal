@@ -15,6 +15,16 @@ class Query(models.Model):
     email = models.EmailField(max_length=100)
     query = models.TextField(max_length=2000)
 
+class Contact(models.Model):
+
+    fname = models.TextField(max_length=100,null=True,blank=True)
+    lname = models.TextField(max_length=100,null=True,blank=True)
+    email = models.EmailField(max_length=100,null=True,blank=True)
+    phone = models.IntegerField()
+
+    sub = models.TextField(max_length=500,null=True,blank=True)
+    msg = models.TextField(max_length=2000,null=True,blank=True)
+
 
 class Category(models.Model):
     content = models.CharField(max_length=120)

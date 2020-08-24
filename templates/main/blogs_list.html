@@ -5,6 +5,12 @@
 
 {% block content %}
 
+<div style="position: absolute;
+      top: 8em;
+      right: 2em;z-index: 999999999 !important;">
+{% include 'message.html'%}
+
+</div>
         
 <div class="container py-5">
     <div class="row">
@@ -13,6 +19,7 @@
             <b><p>No Results found!</p></b>
         </div>
     {% endif %}
+
 
     {% for e in object_list%}
     <!-- Article Card begins-->
@@ -41,61 +48,24 @@
         
     <!-- Article Card ends-->
     
-    {% if forloop.first %}
 
-    <!--Side Form begins-->    
-        <div class="col-6 col-md-4" id="content-mobile">
-            <div class="card side-form">
-                <div class="card-body" style="background-color: #F7F7F7;">
-                    <h5 class="card-title" style="text-align: center; color:#FFA500 ">Have a query?</h5><br>
-                    
-                    <form action="query_send" method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" name="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="query">Write your query</label>
-                            <textarea class="form-control" name="query" id="query" rows="4" ></textarea>
-                        </div>
-
-                        <span style="float: right;"><button type="submit" class="btn btn-warning">Submit</button></span>
-                        
-                    </form>
-                    
-                </div>
-            </div>
-        <style>
-            @media screen and (min-width: 768px) and (max-width: 1920px) {
-            #content-mobile { display: block; }  /* show it on small screens */
-            }
-
-            @media screen and (min-width: 0px) and (max-width: 768px) {
-            #content-mobile { display: none; }   /* hide it elsewhere */
-            }
-
-        </style>
-        <br>
-        
-        </div>
-    <!--Side Form ends-->
-
-    
-
-{% endif %}
-
-        {% endfor %}
+{% endfor %}
 
     <!-- Recent posts -->
-    <div class="col-6 col-md-4">
-                <h2>Recent Posts</h2>
+
+    <div class="col-md-4 col-xs-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 style="text-align:center;padding-bottom:20px;">Recent Posts</h2>
 
         {% for e in recent %}
                 <span class="posted-on">{{ e.published_on |date:"d M Y" }}</span>
                 <h5><a href="/{{ e.slug }}/" class="ellipseReadMore " style="color:orange;">{{ e.question }}</a></h5>
         
         {% endfor %}
+
+            </div>
+        </div>
     </div>
     <!-- Recent posts closed-->
     
@@ -117,5 +87,6 @@
             box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         }
     </style>
+    {% include 'fab.html' %}
 
 {%endblock%}

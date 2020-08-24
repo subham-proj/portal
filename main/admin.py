@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Query,Category,Blogs
+from .models import Query,Category,Blogs,Contact
 from django.utils.translation import gettext, gettext_lazy as _
 from .utils import unique_slug_generator
 
@@ -18,6 +18,19 @@ class Query(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.save()
 
+
+@admin.register(Contact)
+class Contact(admin.ModelAdmin):
+   
+    list_display = ('id','email','sub',)
+
+    fieldsets = (
+        (_('Query'), {'fields': ('fname','lname','phone','email', 'sub','msg')}),
+        
+        )
+
+    def save_model(self, request, obj, form, change):
+        obj.save()
 
 
 

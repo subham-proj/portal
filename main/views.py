@@ -5,6 +5,8 @@ from django.views.generic.detail import DetailView
 
 from django.views import View
 from .models import Query,Category,Blogs
+from django.contrib import messages
+
 # Create your views here.
 
 
@@ -15,9 +17,11 @@ def query_send(request):
     add = Query(email=email,query=query)
 
     add.save()
-    # messages.success(request,'Your Query has been submitted successfully!')
+    messages.success(request,'Your Query has been submitted successfully!')
 
     return redirect('/')
+
+
 
 
 
