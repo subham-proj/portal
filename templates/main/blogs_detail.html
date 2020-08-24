@@ -15,6 +15,7 @@
                 <h5 style="color:orange">Posted on: {{object.published_on | date:"M d, Y"}} </h5>
             </span>
             <span style="float: right;">
+            
                 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
                     <a class="a2a_button_facebook"></a>
                     <a class="a2a_button_whatsapp"></a>
@@ -41,15 +42,22 @@
           
             
         </div>
+        {% if object.tags.all %}
+            <div class="col-6 col-md-4" style="padding-bottom:50px">
+                <div class="card border-warning mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-warning">
+                        <h5 class="card-title" style="text-align: center;">Tags</h5>
 
-        <div class="col-6 col-md-4" style="padding-bottom:50px">
-            <div class="card border-warning mb-3" style="max-width: 18rem;">
-                <div class="card-body text-warning">
-                    <h5 class="card-title" style="text-align: center;">Tags</h5>
-                    <button type="button" class="btn btn-warning"> tags-1 </button>
+                        <button type="button" class="btn btn-warning"> 
+                        {% for e in object.tags.all %}
+                            <a href="/?tags={{ e.slug }}" style="color:black;">{{ e.content }}</a>
+                        {% endfor %} 
+                        </button>
+                        
+                    </div>
                 </div>
-              </div>
-        </div>
+            </div>
+        {% endif %}
       </div>
 </div>
 
