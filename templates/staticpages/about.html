@@ -1,4 +1,6 @@
+
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} About us
 {% endblock title %}
@@ -22,23 +24,23 @@
            
 
             <div class="row clearfix">
-
+                
                 <!-- Team Block -->
                 <div class="team-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <ul class="social-icons">
-                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="https://www.facebook.com/shubhu.ak" target="_blank" ><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/subham-singh-cc/" target="_blank" ><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.instagram.com/shubham__ig" target="_blank" ><i class="fa fa-instagram"></i></a></li>
 
                             <li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
                         </ul>
                         <div class="image">
-                            <a href="#"><img src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="" /></a>
+                            <a href="#"><img src="{% static 'images/t1.jpg' %}" alt="" width="389" height="443" /></a>
                         </div>
                         <div class="lower-content">
-                            <h3>Lorem Ipsum</h3>
-                            <div class="designation">Simply dummy text </div>
+                            <h3>Subham Singh</h3>
+                            <div class="designation">Founder, CEO</div>
                         </div>
                     </div>
                 </div>
@@ -47,8 +49,8 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <ul class="social-icons">
                             <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
 
                             <li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
                         </ul>
